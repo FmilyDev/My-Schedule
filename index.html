@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>จัดตารางเรียน — Create Schedule</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect x='1' y='2' width='14' height='13' rx='2' fill='%231f5f8b'/><rect x='3' y='6' width='4' height='3' fill='%23fff'/><rect x='9' y='9' width='4' height='4' fill='%23fff'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>จัดตารางเรียน</h1>
+      <p class="sub">ใส่วิชาและ section ที่เปิดสอน แล้วโปรแกรมจะหาชุดที่เวลาไม่ชนกันให้</p>
+    </div>
+    <div class="toolbar">
+      <button type="button" id="btn-sample" class="ghost">โหลดตัวอย่าง</button>
+      <button type="button" id="btn-export" class="ghost">ส่งออก JSON</button>
+      <label class="ghost button-like">นำเข้า JSON<input type="file" id="file-import" accept="application/json,.json" hidden></label>
+      <button type="button" id="btn-clear" class="ghost danger">ล้างทั้งหมด</button>
+    </div>
+  </header>
+
+  <p id="notice" class="notice" role="status" hidden></p>
+
+  <main class="layout">
+    <section class="panel editor" aria-labelledby="h-courses">
+      <h2 id="h-courses">วิชา</h2>
+      <form id="form-course" class="row-form" autocomplete="off">
+        <input name="code" placeholder="รหัสวิชา เช่น MATH101" required aria-label="รหัสวิชา">
+        <input name="name" placeholder="ชื่อวิชา" aria-label="ชื่อวิชา">
+        <button type="submit">เพิ่มวิชา</button>
+        <p class="form-error" data-error></p>
+      </form>
+      <div id="course-list"></div>
+    </section>
+
+    <section class="panel results" aria-labelledby="h-results">
+      <h2 id="h-results">ตารางที่เป็นไปได้</h2>
+      <fieldset class="prefs">
+        <legend>เรียงผลลัพธ์ตาม</legend>
+        <label><input type="checkbox" id="pref-gaps"> ช่วงว่างระหว่างคาบน้อย</label>
+        <label><input type="checkbox" id="pref-days"> ไปเรียนน้อยวัน</label>
+        <label>ไม่อยากเรียนก่อน <input type="time" id="pref-before"></label>
+        <label>ไม่อยากเรียนหลัง <input type="time" id="pref-after"></label>
+      </fieldset>
+      <div id="result-area"></div>
+    </section>
+  </main>
+
+  <footer class="foot">ข้อมูลเก็บไว้ในเบราว์เซอร์เครื่องนี้เท่านั้น — กด "ส่งออก JSON" เพื่อสำรองหรือย้ายเครื่อง</footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

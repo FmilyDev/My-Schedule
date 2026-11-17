@@ -1,0 +1,14 @@
+{
+  "name": "create-schedule",
+  "version": "1.0.0",
+  "description": "โปรแกรมจัดตารางเรียนส่วนตัว: เลือก section แต่ละวิชาแล้วหาชุดที่เวลาไม่ชนกัน",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "start": "npx --yes serve ."
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
