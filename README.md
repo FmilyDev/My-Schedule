@@ -9,7 +9,11 @@
 - ข้อมูลเก็บในเบราว์เซอร์ (localStorage) ส่งออก/นำเข้าเป็น JSON ได้
 - ไม่มี dependency ไม่ต้อง build — HTML + CSS + JavaScript ล้วน
 
-## วิธีใช้งาน
+## ใช้งานออนไลน์
+
+**https://fmilydev.github.io/create-schedule/**
+
+## รันบนเครื่องตัวเอง
 
 เปิดผ่าน web server (ดับเบิลคลิก `index.html` ตรง ๆ จะไม่ทำงาน เพราะเบราว์เซอร์ไม่โหลด ES module จาก `file://`):
 
@@ -20,8 +24,7 @@ python3 -m http.server 8000
 
 แล้วเปิด `http://localhost:8000` (หรือพอร์ตที่ขึ้น) กด **โหลดตัวอย่าง** เพื่อดูการทำงาน
 
-> ถ้าเปิด GitHub Pages ให้ repo นี้ (Settings → Pages → Deploy from branch `main` / root) จะใช้งานผ่านเว็บได้เลย
-> หมายเหตุ: บัญชี GitHub ฟรี เปิด Pages ได้เฉพาะ repo สาธารณะ
+เว็บออนไลน์ deploy อัตโนมัติจาก branch `main` ผ่าน GitHub Pages ทุกครั้งที่ push
 
 ## ทดสอบ
 
